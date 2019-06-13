@@ -10,10 +10,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        //appBar: AppBar(title: Text('My Info')),
+        appBar: AppBar(title: Text('My Profile'), backgroundColor: Colors.teal.shade800,),
         backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
                 radius: 50.0,
@@ -33,41 +34,49 @@ class MyApp extends StatelessWidget {
                     color: Colors.white70,
                     letterSpacing: 2.0,
                   )),
-              Container(
+              SizedBox(
+                width: 200.0,
+                child: Divider(color: Colors.white),
+              ),
+              Card(
                 color: Colors.white,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                padding: EdgeInsets.all(10.0),
-                child: Row(
-                  children: <Widget>[
-                    Icon(Icons.phone, color: Colors.teal),
-                    SizedBox(width: 10.0),
-                    Text(
-                      '+55 123 456 789',
-                      style: TextStyle(
-                          color: Colors.teal.shade900,
-                          fontFamily: 'Montserrat_2',
-                          fontSize: 15.0),
-                    ),
-                  ],
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.phone, color: Colors.teal),
+                      SizedBox(width: 10.0),
+                      Text(
+                        '+55 123 456 789',
+                        style: TextStyle(
+                            color: Colors.teal.shade900,
+                            fontFamily: 'Montserrat_2',
+                            fontSize: 15.0),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              Container(
+              Card(
                 color: Colors.white,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                padding: EdgeInsets.all(10.0),
-                child: (Row(
-                  children: <Widget>[
-                    Icon(Icons.mail, color: Colors.teal),
-                    SizedBox(width: 10.0),
-                    Text(
-                      'example@example.com',
-                      style: TextStyle(
-                          color: Colors.teal.shade900,
-                          fontFamily: 'Montserrat_2',
-                          fontSize: 15.0),
-                    ),
-                  ],
-                )),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.mail, color: Colors.teal),
+                      SizedBox(width: 10.0),
+                      Text(
+                        'example@example.com',
+                        style: TextStyle(
+                            color: Colors.teal.shade900,
+                            fontFamily: 'Montserrat_2',
+                            fontSize: 15.0),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
